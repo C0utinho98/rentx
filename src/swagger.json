@@ -11,11 +11,15 @@
     "paths": {
         "/categories": {
             "post": {
-                "tags" : ["Category"],
+                "tags": [
+                    "Category"
+                ],
                 "sumarry": "Create a category",
                 "description": "Create a new category",
                 "security": [
-                    {"bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
                     "content": {
@@ -27,7 +31,7 @@
                                         "type": "string"
                                     },
                                     "description": {
-                                        "type":"string"
+                                        "type": "string"
                                     }
                                 },
                                 "example": {
@@ -43,16 +47,18 @@
                         "description": "Created"
                     },
                     "500": {
-                        "description":"Category alread exists"
+                        "description": "Category alread exists"
                     }
                 }
             },
             "get": {
-                "tags": ["Category"],
+                "tags": [
+                    "Category"
+                ],
                 "summary": "List all categories",
                 "description": "List all categories",
                 "responses": {
-                    "200":{
+                    "200": {
                         "description": "Success",
                         "content": {
                             "application/json": {
@@ -62,7 +68,7 @@
                                         "type": "object",
                                         "properties": {
                                             "name": {
-                                                "type":"string"
+                                                "type": "string"
                                             },
                                             "description": {
                                                 "type": "string"
@@ -77,22 +83,26 @@
             }
         },
         "/categories/import": {
-            "post":{
-                "tags": ["Category"],
+            "post": {
+                "tags": [
+                    "Category"
+                ],
                 "sumarry": "Upload a new category",
                 "description": "Upload a new category",
                 "security": [
-                    {"bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
-                    "content":{
+                    "content": {
                         "multipart/form-data": {
-                            "schema":{
-                                "type":"object",
+                            "schema": {
+                                "type": "object",
                                 "properties": {
                                     "file": {
                                         "type": "string",
-                                        "format": "binary"   
+                                        "format": "binary"
                                     }
                                 }
                             }
@@ -108,22 +118,26 @@
         },
         "/specifications": {
             "post": {
-                "tags": ["Specifications"],
+                "tags": [
+                    "Specifications"
+                ],
                 "sumarry": "Create a specification",
                 "description": "Create a new specification",
                 "security": [
-                    {"bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
-                    "content":{
-                        "application/json":{
-                            "schema":{
+                    "content": {
+                        "application/json": {
+                            "schema": {
                                 "$ref": "#definitions/Specification"
                             }
                         }
                     }
                 },
-                "responses":{
+                "responses": {
                     "201": {
                         "description": "Created"
                     },
@@ -135,13 +149,15 @@
         },
         "/sessions": {
             "post": {
-                "tags": ["Session"],
+                "tags": [
+                    "Session"
+                ],
                 "sumarry": "Authentication user",
-                "description":"Authentication user",
+                "description": "Authentication user",
                 "requestBody": {
                     "content": {
                         "application/json": {
-                            "schema":{
+                            "schema": {
                                 "type": "object",
                                 "properties": {
                                     "email": {
@@ -155,7 +171,7 @@
                         }
                     }
                 },
-                "responses":{
+                "responses": {
                     "200": {
                         "description": "Success"
                     },
@@ -167,11 +183,15 @@
         },
         "/cars": {
             "post": {
-                "tags": ["Cars"],
+                "tags": [
+                    "Cars"
+                ],
                 "sumarry": "Create a new car",
                 "description": "Create a new Car",
                 "security": [
-                    {"bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
                     "content": {
@@ -190,15 +210,19 @@
                         "description": "Car alread exists!"
                     }
                 }
-            } 
+            }
         },
         "/cars/images/{id}": {
             "post": {
-                "tags": ["Cars"],
+                "tags": [
+                    "Cars"
+                ],
                 "sumarry": "Upload images",
                 "description": "Upload images",
                 "security": [
-                    {"BearerAuth": []}
+                    {
+                        "BearerAuth": []
+                    }
                 ],
                 "parameters": [
                     {
@@ -242,7 +266,7 @@
             "type": "object",
             "properties": {
                 "name": {
-                    "type":"string"
+                    "type": "string"
                 },
                 "description": {
                     "type": "string"
@@ -273,7 +297,6 @@
                 "category_id": {
                     "type": "string"
                 }
-
             }
         }
     },

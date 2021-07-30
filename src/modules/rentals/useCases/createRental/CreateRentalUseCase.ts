@@ -21,7 +21,7 @@ class CreateRentalUseCase {
         private dateProvider: IDateProvider,
         @inject("CarsRepository")
         private carsRepository: ICarsRepository
-    ) { }
+    ) {}
 
     async execute({
         user_id,
@@ -36,9 +36,8 @@ class CreateRentalUseCase {
             throw new AppError("Car is unavailable");
         }
 
-        const rentalOpenToUser = await this.rentalsRepository.findOpenRentalByUser(
-            user_id
-        );
+        const rentalOpenToUser =
+            await this.rentalsRepository.findOpenRentalByUser(user_id);
 
         if (rentalOpenToUser) {
             throw new AppError("There's a rental in progresss for user!");
